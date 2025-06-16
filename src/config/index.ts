@@ -1,5 +1,5 @@
-import { config as dotenvConfig } from 'dotenv';
-dotenvConfig({ path: '.env' });
+import { config as dotenvConfig } from 'dotenv'
+dotenvConfig({ path: '.env' })
 
 export default {
   env: process.env.ENVIRONMENT,
@@ -22,5 +22,6 @@ export default {
     host: process.env.REDIS_HOST,
     port: parseInt(process.env.REDIS_PORT || '6379'),
     cache: process.env.REDIS_CACHE?.toUpperCase() === 'TRUE',
+    cluster: false,
   },
-};
+}

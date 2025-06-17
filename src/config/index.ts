@@ -12,7 +12,7 @@ export default {
   database: {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT || '5432',
-    username: process.env.DB_USER,
+    username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     pool: parseInt(process.env.DB_POOL || '10'),
@@ -22,6 +22,6 @@ export default {
     host: process.env.REDIS_HOST,
     port: parseInt(process.env.REDIS_PORT || '6379'),
     cache: process.env.REDIS_CACHE?.toUpperCase() === 'TRUE',
-    cluster: false,
+    cluster: process.env.REDIS_CLUSTER?.toUpperCase() === 'TRUE',
   },
 }

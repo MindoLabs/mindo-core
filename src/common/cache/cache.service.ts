@@ -13,7 +13,11 @@ export class CacheService {
       `[connecting redis] host: ${host}, port: ${port}, env: ${config.env}`
     )
 
-    const redisOptions: RedisOptions = { port, host }
+    const redisOptions: RedisOptions = {
+      port,
+      host,
+      maxRetriesPerRequest: null,
+    }
 
     if (cluster) {
       // for aws redis connection

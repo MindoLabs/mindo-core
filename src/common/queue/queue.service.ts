@@ -51,7 +51,11 @@ export class QueueService implements OnApplicationShutdown {
         `[connecting redis] host: ${host}, port: ${port}, topicName: ${topicName}`
       )
 
-      const redisOptions: RedisOptions = { port, host }
+      const redisOptions: RedisOptions = {
+        port,
+        host,
+        maxRetriesPerRequest: null,
+      }
       if (cluster) {
         redisOptions.tls = {
           rejectUnauthorized: false,

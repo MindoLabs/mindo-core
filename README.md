@@ -1,3 +1,7 @@
+> 🚫 This is a closed-source project. The source code is viewable but not reusable.
+> Do not copy, modify, or distribute any part of this code without written permission from MindoLabs.
+
+<br>
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>

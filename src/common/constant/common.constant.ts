@@ -3,4 +3,8 @@ export const ENV = {
   qa: 'qa',
   uat: 'uat',
   prod: 'prod',
-};
+}
+
+export enum JobTypes {
+  ExampleJob = 'ExampleJob',
+}

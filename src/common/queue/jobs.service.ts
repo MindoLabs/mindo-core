@@ -1,5 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common'
 import { IQueueService, IWorker, JobInput, QueueService } from './queue.service'
+import { JobTypes } from '../constant/common.constant'
+import { AppService } from 'src/app.service'
 
 @Injectable()
 export class JobService implements IQueueService {
@@ -15,14 +17,16 @@ export class JobService implements IQueueService {
   }
 
   // implement jobs here
-  async exampleJob(data: any) {
+  async exampleJob(input: string) {
+    this.logger.log('[JobService.exampleJob]')
+
     const job = {
-      data,
-      jobType: 'JobTypeExample',
+      input,
+      jobType: JobTypes.ExampleJob,
     }
     await this.baseWorker.addToQueue({
       job,
-      serviceName: 'SericeNameExample',
+      serviceName: AppService.name,
     })
   }
 
